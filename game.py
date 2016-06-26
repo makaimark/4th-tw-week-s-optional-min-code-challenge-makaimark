@@ -1,49 +1,11 @@
-import math
 import random
-a = []
-a.append(random.randint(1, 99))
-a.append(random.randint(1, 99))
-a.append(random.randint(1, 99))
-a.append(random.randint(1, 99))
-a.append(random.randint(1, 99))
-a.append(random.randint(1, 99))
-a.append(random.randint(1, 99))
-a.append(random.randint(1, 99))
-a.append(random.randint(1, 99))
-a.append(random.randint(1, 99))
-for i in range(10):
-    g = int(input("Enter an integer from 1 to 99: "))
-    while a[i] != g:
-        if g < a[i]:
-            print("guess is low")
-            g = int(input("Enter an integer from 1 to 99: "))
-        elif g > a[i]:
-            print("guess is high")
-            g = int(input("Enter an integer from 1 to 99: "))
-        else:
-            break
-    print("you guessed it!")
 
-b = []
-b.append(random.randint(1, 49))
-b.append(random.randint(1, 49))
-b.append(random.randint(1, 49))
-b.append(random.randint(1, 49))
-b.append(random.randint(1, 49))
-b.append(random.randint(1, 49))
-b.append(random.randint(1, 49))
-b.append(random.randint(1, 49))
-b.append(random.randint(1, 49))
-b.append(random.randint(1, 49))
-for i in range(10):
-    g = int(input("Enter an integer from 1 to 49: "))
-    while b[i] != g:
-        if g < b[i]:
-            print("guess is low")
-            g = int(input("Enter an integer from 1 to 49: "))
-        elif g > b[i]:
-            print("guess is high")
-            g = int(input("Enter an integer from 1 to 49: "))
-        else:
-            break
-    print("you guessed it!")
+
+def game_logic(b):
+    for i in range(10):
+        a, c = 0, random.randint(1, b)
+        while c != a:
+            a = int(input("Enter an int from 1 to " + str(b) + ":"))
+            print("guess is low" if a < c else "guess is high" if a > c else "you guessed it!")
+game_logic(99)
+game_logic(49)
